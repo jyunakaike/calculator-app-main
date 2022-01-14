@@ -8,6 +8,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Spartan', sans-serif;
 }
 html{
     font-size: 62.5%;
@@ -16,54 +17,111 @@ body{
     background-color:  hsl(222, 26%, 31%);
     display: grid;
     place-items: center;
+    font-size: 32px;
+    padding-top: 5%;
+    
 }
 
+/* containter */
 .container {
-    background-color: gray;
-    width: 500px;
-    height: 250px;
+    background-color: hsl(222, 26%, 31%);
+    /* width: 500px;
+    height: 250px; */
+    display: grid;
+        place-items: center;
+    gap: 20px;
+
 }
 
+/* container header */
 .header-container {
-    background-color: blueviolet;
     display: flex;
         justify-content: space-between;
         align-items: center;
+        padding:  10px;
+    width: 100%;
+    font-size: small;
+    color: white;
 }
 
+.theme{
+    display: flex;
+        justify-content: center;
+        align-content: center;
+        gap: 10px;
+    ;
+}
 
+.theme > p{
+    display: grid;
+        place-items: center;
+}
+
+/* container main */
 .main-container{
-    background-color: burlywood;
+    background-color: hsl(224, 36%, 15%);
     display: flex;
         justify-content: flex-end;
         align-items: center;
     border-radius: 8px;
+    padding: 20px;
+    
+    width: 100%;
+    color: white;
+    
 
 }
+/* container footer */
 .footer-container{
-    background-color: cadetblue;
+    background-color: hsl(224, 36%, 15%);
     display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr ;
-        
+    width: 100%;
+    padding: 20px;
+    gap: 10px;
+    
+    border-radius: 10px;
+    
+    
         
 }
 .footer-container > div{
-    border: solid 1px;
+    background-color: hsl(30, 25%, 89%);
+    box-shadow: 0px 3px 0px hsl(28, 16%, 65%);
+    /* border: solid 1px; */
+    border-radius: 5px;
+    width: 100%;
+
     display: grid;
     place-items: center;
+    
+    padding: 10px;
     
 }
 
 
 .footer-container > div:nth-last-child(2),
 .footer-container > div:nth-last-child(1) {
-    background: red;
+    background: hsl(6, 63%, 50%);
+    color:white;
     grid-column: span 2;
-
+    box-shadow: 0px 3px 0px hsl(6, 70%, 34%);
+        
     
     display: grid;
         place-items: center;
   }
+  
+  .footer-container > div:nth-child(4),
+  .footer-container > div:nth-last-child(2){
+    background: hsl(225, 21%, 49%);
+    
+    box-shadow: 0px 3px 0px hsl(224, 28%, 35%);
+    color:white;
+    
+  }
+
+
 
 
 
