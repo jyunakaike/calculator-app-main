@@ -1,0 +1,72 @@
+/* #### Backgrounds */
+
+/* - Very dark desaturated blue (main background): hsl(222, 26%, 31%)
+- Very dark desaturated blue (toggle background, keypad background): hsl(223, 31%, 20%)
+- Very dark desaturated blue (screen background): hsl(224, 36%, 15%) */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color:  hsl(222, 26%, 31%);
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background-color: gray;
+    width: 500px;
+    height: 250px;
+}
+
+.header-container {
+    background-color: blueviolet;
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+
+.main-container{
+    background-color: burlywood;
+    display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    border-radius: 8px;
+
+}
+.footer-container{
+    background-color: cadetblue;
+    display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        
+        
+}
+.footer-container > div{
+    border: solid 1px;
+    display: grid;
+    place-items: center;
+    
+}
+
+
+.footer-container > div:nth-last-child(2),
+.footer-container > div:nth-last-child(1) {
+    background: red;
+    grid-column: span 2;
+
+    
+    display: grid;
+        place-items: center;
+  }
+
+
+
+
+
+
