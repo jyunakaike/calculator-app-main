@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
-
+  
   <title>Frontend Mentor | Calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -28,7 +28,7 @@
   </style>
 </head>
 
-<body>
+<body >
   <section class="container">
     <header class="header-container">
 
@@ -41,18 +41,25 @@
 
         <div>
           <div>1,2,3</div>
-          <div>button</div>
+          
+          <div class="setting-btns settingTheme1">
+            <!-- button settings -->
+            <button class="setting setting1 show-red " type="button"></button>
+            <button class="setting setting2 invisible" type="button"></button>
+            <button class="setting setting3 invisible" type="button"></button>
+          </div>
+        
         </div>
       </div>
 
 
     </header>
-    <main class="main-container">
-      399,981
+    <main class="main-container" >
+        <p class="output" > 399,981</p>
     </main>
 
     <footer class="footer-container">
-      <div>7</div>
+      <div onclick="">7</div>
       <div>8</div>
       <div>9</div>
       <div>Del</div>
@@ -86,6 +93,9 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
     Coded by <a href="#">Your Name Here</a>.
   </div>
+
+<script src="./app.js"></script>
+  
 </body>
 
 </html>
