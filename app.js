@@ -1,20 +1,115 @@
 const body = document.body
 
+const header = document.getElementById('header-container')
+
 const setting1 = document.querySelector('.setting1')
 const setting2 = document.querySelector('.setting2')
 const setting3 = document.querySelector('.setting3')
 const themeSelectBox = document.querySelector('.setting-btns')
 
 const output = document.getElementById('output')
+const btns = document.querySelectorAll('.btns')
 
 const calc = document.getElementById('calc-key')
 
+let str = ""
+let value1 = ""
+let value2 = ""
+let flag = ""
+let selectedTheme = 1
+// calc
+function add (a, b) {
+    if (a && b) {
+      const sum = +a + +b
+      output.textContent = sum
+    }
+  }
+  function minus (a, b) {
+    if (a && b) {
+      const remainder = +a - +b
+      output.textContent = remainder
+    }
+  }
+  function multiply (a, b) {
+    if (a && b) {
+      const product = +a * +b
+      output.textContent = product
+    }
+  }
+  function divide (a, b) {
+    if (a && b) {
+      const quotient = +a / +b
+      output.textContent = quotient
+    }
+  }
 
-let SelectedTheme = 1
+// functions
+function reset() {
+    str = ""
+    output.textContent = str
+}
+function del() {
+    const newString = str.slice(0, -1)
+    str = newString
+    output.textContent = str
+}
+function calculate(value1, value2) {
+    if (flag === "+") {
+        add(value1, value2)
+    }
+    if (flag === "-") {
+        minus(value1, value2)
+    }
+    if (flag === "x") {
+        multiply(value1, value2)
+    }
+    if (flag === "/") {
+        divide(value1, value2)
+    }
+}
 
+// event
 
-setting1.addEventListener('click', () => {
-    console.log('Clicksetting');
+btns.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const button = e.target
+        console.log(button);
+        // check if number is clicked
+        if (button.classList.contains('num')) {
+            // check if string includes decimal
+            let decimalCheck = str.includes('.')
+            if (!decimalCheck) {
+                str = str + button.textContent
+                output.textContent = str
+            } else if (decimalCheck && button.textContent !== '.') {
+                str = str + button.textContent
+                output.textContent = str
+            }
+        }
+
+        // non-number btns
+        if (button.textContent === "reset") {
+            reset()
+        }
+        if (button.textContent === "del") {
+            del()
+        }
+
+        // check the operator
+        if (button.classList.contains('operator')) {
+            value1 = str
+            str = ""
+            flag = button.textContent
+        }
+
+        // calculate final number
+        if (button.textContent === "=") {
+            value2 = str
+            str = ""
+            calculate(value1, value2)
+        }
+    })
+
 })
 
 // Themes
@@ -25,6 +120,12 @@ setting1.addEventListener('click', () => {
     body.classList.remove('theme3')
     body.classList.remove('theme2')
     body.classList.add('theme1')
+
+    // header container 
+    header.classList.remove('header-style3')
+    header.classList.remove('header-style2')
+    header.classList.add('header-style1')
+    
 
     // Setting container 
     themeSelectBox.classList.remove('settingTheme2')
@@ -78,6 +179,13 @@ setting2.addEventListener('click', () => {
     body.classList.remove('theme1')
     body.classList.remove('theme3')
     body.classList.add('theme2')
+
+    
+    // header container 
+    header.classList.remove('header-style3')
+    header.classList.remove( 'header-style1' )
+    header.classList.add('header-style2')
+    
 
     // setting container
     themeSelectBox.classList.remove('settingTheme1')
@@ -133,6 +241,13 @@ setting3.addEventListener('click', () => {
     body.classList.remove('theme1')
     body.classList.remove('theme2')
     body.classList.add('theme3')
+
+    
+    // header container 
+    header.classList.remove('header-style2' )
+    header.classList.remove( 'header-style1' )
+    header.classList.add('header-style3')
+    
 
     // setting container
     themeSelectBox.classList.remove('settingTheme1')

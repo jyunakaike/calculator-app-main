@@ -46,6 +46,11 @@ body{
 }
 
 /* container header */
+
+.theme-title{
+    display: flex;
+    justify-content: space-around;
+}
 .header-container {
     display: flex;
         justify-content: space-between;
@@ -53,9 +58,20 @@ body{
         padding:  10px;
     width: 100%;
     font-size: small;
-    color: white;
+    /* color: white; */
 }
 
+.header-style1{
+    color: white;
+}
+.header-style2{
+    color: black;
+
+}
+.header-style3{
+    color: yellow;
+
+}
 .theme{
     display: flex;
         justify-content: center;
@@ -133,6 +149,7 @@ body{
     width: 100%;
     color: white;
     font-size: 2rem;
+    min-height: 50px;
 }
 
 /* theme2 */
@@ -147,6 +164,7 @@ body{
     width: 100%;
     color:hsl(60, 10%, 19%);
     font-size: 2rem;
+    min-height: 50px;
 }
 /* theme3 */
 .main-container3{
@@ -160,6 +178,7 @@ body{
     width: 100%;
     color: hsl(52, 100%, 62%);
     font-size: 2rem;
+    min-height: 50px;
 }
 
 
