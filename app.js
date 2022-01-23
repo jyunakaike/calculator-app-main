@@ -52,6 +52,7 @@ function del() {
     const newString = str.slice(0, -1)
     str = newString
     output.textContent = str
+
 }
 function calculate(value1, value2) {
     if (flag === "+") {
@@ -73,7 +74,6 @@ function calculate(value1, value2) {
 btns.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         const button = e.target
-        console.log(button);
         // check if number is clicked
         if (button.classList.contains('num')) {
             // check if string includes decimal
@@ -93,6 +93,7 @@ btns.forEach((btn) => {
         }
         if (button.textContent === "del") {
             del()
+            
         }
 
         // check the operator
